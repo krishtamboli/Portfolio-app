@@ -94,39 +94,39 @@ st.markdown("""
 # 3. Sidebar Configuration
 with st.sidebar:
     st.markdown("<h2 style='color: white; margin-bottom:0;'>KRISH TAMBOLI</h2>", unsafe_allow_html=True)
-    st.caption("Data Systems & Analytics Specialist") [cite: 4]
+    st.caption("Data Systems & Analytics Specialist")
     st.markdown("---")
-    st.markdown("🌐 **Location:** Frankfurt, Germany") [cite: 2]
-    st.markdown("✉️ krishtamboli10@gmail.com") [cite: 2]
-    st.markdown("📞 +49 15510685501") [cite: 2]
+    st.markdown("🌐 **Location:** Frankfurt, Germany")
+    st.markdown("✉️ krishtamboli10@gmail.com")
+    st.markdown("📞 +49 15510685501")
     st.markdown("---")
     st.markdown("🔗 **Networks**")
-    st.markdown("[LinkedIn Profile](https://linkedin.com)") [cite: 2]
+    st.markdown("[LinkedIn Profile](https://linkedin.com)")
     st.markdown("[GitHub Repositories](https://github.com/krishtamboli)")
     st.markdown("---")
     st.caption("💼 Current Status:")
-    st.info("Open to Working Student & Data Operations roles within Germany.") [cite: 7]
+    st.info("Open to Working Student & Data Operations roles within Germany.")
 
 # 4. Premium Top Hero Grid
 st.markdown("<br>", unsafe_allow_html=True)
-st.markdown("<div class='hero-name'>Krish Tamboli</div>", unsafe_allow_html=True) [cite: 1]
+st.markdown("<div class='hero-name'>Krish Tamboli</div>", unsafe_allow_html=True)
 st.markdown("<div class='hero-subtitle'>Systems Engineering & Data Health</div>", unsafe_allow_html=True)
 
 st.markdown(
-    "I am a Master's student in **High Integrity Systems** who actually enjoys the detective work involved in data. " [cite: 4]
-    "While standard workflows focus on simple visualization charts, I specialize in deep-diving raw backend datasets " [cite: 5]
-    "to isolate hidden structural anomalies, clean chaotic production records, and eliminate processing infrastructure bottlenecks." [cite: 5]
+    "I am a Master's student in **High Integrity Systems** who actually enjoys the detective work involved in data[cite: 4]. "
+    "While standard workflows focus on simple visualization charts, I specialize in deep-diving raw backend datasets "
+    "to isolate hidden structural anomalies, clean chaotic production records, and eliminate processing infrastructure bottlenecks[cite: 5]."
 )
 
 # Highlights Metrics Grid
 st.markdown("<br>", unsafe_allow_html=True)
 m_col1, m_col2, m_col3 = st.columns(3)
 with m_col1:
-    st.markdown('<div class="interactive-card"><span style="color:#9CA3AF; font-size:12px; font-weight:600; text-transform:uppercase;">Monitoring Overhead</span><br><span style="font-size:36px; font-weight:800; color:#F43F5E;">-40%</span></div>', unsafe_allow_html=True) [cite: 18]
+    st.markdown('<div class="interactive-card"><span style="color:#9CA3AF; font-size:12px; font-weight:600; text-transform:uppercase;">Monitoring Overhead</span><br><span style="font-size:36px; font-weight:800; color:#F43F5E;">-40%</span></div>', unsafe_allow_html=True)
 with m_col2:
-    st.markdown('<div class="interactive-card"><span style="color:#9CA3AF; font-size:12px; font-weight:600; text-transform:uppercase;">Master Record Diagnostics</span><br><span style="font-size:36px; font-weight:800; color:#38BDF8;">200+ Logs</span></div>', unsafe_allow_html=True) [cite: 17]
+    st.markdown('<div class="interactive-card"><span style="color:#9CA3AF; font-size:12px; font-weight:600; text-transform:uppercase;">Master Record Diagnostics</span><br><span style="font-size:36px; font-weight:800; color:#38BDF8;">200+ Logs</span></div>', unsafe_allow_html=True)
 with m_col3:
-    st.markdown('<div class="interactive-card"><span style="color:#9CA3AF; font-size:12px; font-weight:600; text-transform:uppercase;">Database Reliability Lift</span><br><span style="font-size:36px; font-weight:800; color:#10B981;">+15%</span></div>', unsafe_allow_html=True) [cite: 17]
+    st.markdown('<div class="interactive-card"><span style="color:#9CA3AF; font-size:12px; font-weight:600; text-transform:uppercase;">Database Reliability Lift</span><br><span style="font-size:36px; font-weight:800; color:#10B981;">+15%</span></div>', unsafe_allow_html=True)
 
 st.markdown("<br>", unsafe_allow_html=True)
 
@@ -215,7 +215,7 @@ for line in raw_log_data:
         st.info("Pipeline Engine Idle. Toggle the checkbox configuration parameter above to test the live parser stream.")
 
 with tab2:
-    st.markdown("<div class='section-title'>Technical Capability Spectrum</div>", unsafe_allow_html=True) [cite: 8]
+    st.markdown("<div class='section-title'>Technical Capability Spectrum</div>", unsafe_allow_html=True)
     
     sc1, sc2, sc3 = st.columns(3)
     with sc1:
@@ -235,44 +235,44 @@ with tab2:
             st.markdown(f'<span class="custom-badge">{s}</span>', unsafe_allow_html=True)
 
 with tab3:
-    st.markdown("<div class='section-title'>Chronological Record</div>", unsafe_allow_html=True) [cite: 15]
+    st.markdown("<div class='section-title'>Chronological Record</div>", unsafe_allow_html=True)
     
     # Gliding Job Container Card
     st.markdown("""
     <div class="interactive-card">
-        <span style="float: right;" class="job-meta">June 2022 – Aug 2024</span> [cite: 16]
-        <div class="job-header">Software Specialist (Data Analytics)</div> [cite: 16]
-        <div style="color: #9CA3AF; font-size: 14px; margin-bottom: 12px;">eClinicalWorks | Mumbai</div> [cite: 16]
+        <span style="float: right;" class="job-meta">June 2022 – Aug 2024</span>
+        <div class="job-header">Software Specialist (Data Analytics)</div>
+        <div style="color: #9CA3AF; font-size: 14px; margin-bottom: 12px;">eClinicalWorks | Mumbai</div>
         <p style="font-size:14px; color: #E2E8F0; line-height: 1.6;">
-        • Conducted deep-dive SQL investigations into over 200 customer master records to isolate and resolve validation errors, improving master database reliability by 15% and ensuring clear data tracking for downstream transactional reports.<br> [cite: 17]
-        • Built automated stakeholder alert workflows using Power Automate that flagged performance deviations and triggered targeted notifications in real time, cutting monitoring overhead by 40% across all active reporting pipelines.<br> [cite: 18]
-        • Designed interactive Power BI dashboards to track operational KPIs while utilizing Jira to document and coordinate high-priority data exceptions, creating unified technical workflows that improved data visibility for cross-functional teams.<br> [cite: 19]
-        • Coordinated cross-functional workflows across business, product, and IT teams in an agile environment, standardising reporting definitions, translating business requirements into technical solutions, and supporting 5 departments at the business-IT interface. Enforced strict data security tracking parameters under strict compliance mandates.<br> [cite: 20]
+        • Conducted deep-dive SQL investigations into over 200 customer master records to isolate and resolve validation errors, improving master database reliability by 15% and ensuring data tracking for downstream transactional reports.<br>
+        • Built automated stakeholder alert workflows using Power Automate that flagged performance deviations and triggered targeted notifications in real time, cutting monitoring overhead by 40% across all active reporting pipelines.<br>
+        • Designed interactive Power BI dashboards to track operational KPIs while utilizing Jira to document and coordinate high-priority data exceptions, creating unified technical workflows that improved data visibility for cross-functional teams.<br>
+        • Coordinated cross-functional workflows across business, product, and IT teams in an agile environment, standardising reporting definitions, translating business requirements into technical solutions, and supporting 5 departments at the business-IT interface.<br>
         </p>
     </div>
-    """, unsafe_allow_html=True)
+    """, unsafe_allow_html=True) [cite: 16, 17, 18, 19, 20]
     
     col_ed1, col_ed2 = st.columns(2)
     with col_ed1:
         st.markdown("""
         <div class="interactive-card">
-            <div class="job-header" style="margin-bottom:10px;">Academic Foundations</div> [cite: 32]
-            <p style="margin:0; font-weight:600; font-size:15px;">MSc in Computer Science (High Integrity Systems)</p> [cite: 33]
-            <p style="color:#9CA3AF; font-size:13px; margin:0; font-family: monospace;">Frankfurt University of Applied Sciences | Germany</p> [cite: 33]
+            <div class="job-header" style="margin-bottom:10px;">Academic Foundations</div>
+            <p style="margin:0; font-weight:600; font-size:15px;">MSc in Computer Science (High Integrity Systems)</p>
+            <p style="color:#9CA3AF; font-size:13px; margin:0; font-family: monospace;">Frankfurt University of Applied Sciences | Germany</p>
             <br>
-            <p style="margin:0; font-weight:600; font-size:15px;">BSc in Computer Science</p> [cite: 34]
-            <p style="color:#9CA3AF; font-size:13px; margin:0; font-family: monospace;">Mumbai University | India</p> [cite: 34]
+            <p style="margin:0; font-weight:600; font-size:15px;">BSc in Computer Science</p>
+            <p style="color:#9CA3AF; font-size:13px; margin:0; font-family: monospace;">Mumbai University | India</p>
         </div>
-        """, unsafe_allow_html=True)
+        """, unsafe_allow_html=True) [cite: 33, 34]
         
     with col_ed2:
         st.markdown("""
         <div class="interactive-card">
-            <div class="job-header" style="margin-bottom:10px;">Technical Credentials</div> [cite: 29]
-            <p style="margin:0; font-size:14px; color:#E2E8F0;">✔️ Java Programming — IIT Bombay (Spoken Tutorial)</p>  [cite: 30]
-            <p style="margin:6px 0; font-size:14px; color:#E2E8F0;">✔️ MongoDB Developer — Vidyalankar School of IT</p> [cite: 31]
-            <p style="margin:0; font-size:14px; color:#E2E8F0;">✔️ HTML, CSS & JavaScript — Vidyalankar School of IT</p> [cite: 30]
+            <div class="job-header" style="margin-bottom:10px;">Technical Credentials</div>
+            <p style="margin:0; font-size:14px; color:#E2E8F0;">✔️ Java Programming — IIT Bombay (Spoken Tutorial)</p> 
+            <p style="margin:6px 0; font-size:14px; color:#E2E8F0;">✔️ MongoDB Developer — Vidyalankar School of IT</p>
+            <p style="margin:0; font-size:14px; color:#E2E8F0;">✔️ HTML, CSS & JavaScript — Vidyalankar School of IT</p>
             <br>
-            <p style="margin:0; font-size:13px; color:#9CA3AF; font-family: monospace;">🗣️ Languages: English (Fluent C1) | German (A2)</p> [cite: 35, 36]
+            <p style="margin:0; font-size:13px; color:#9CA3AF; font-family: monospace;">🗣️ Languages: English (Fluent C1) | German (A2)</p>
         </div>
-        """, unsafe_allow_html=True)
+        """, unsafe_allow_html=True) [cite: 30, 31, 36]
