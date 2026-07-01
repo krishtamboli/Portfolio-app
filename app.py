@@ -1,195 +1,261 @@
 import streamlit as st
 import pandas as pd
-import plotly.express as px
+import re
 
-# 1. Page Configuration & Professional Theme Injection
-st.set_page_config(page_title="Krish Tamboli | Portfolio", page_icon="📊", layout="wide")
+# 1. Premium Page Setup
+st.set_page_config(page_title="Krish Tamboli | Portfolio", page_icon="⚡", layout="wide")
 
-# Custom UI CSS Styling for a Premium Dark Accent look
+# 2. Advanced Minimalist CSS Injection (Obsidian-Dark Theme)
 st.markdown("""
     <style>
-    .main .block-container { padding-top: 1.5rem; }
-    .stTabs [data-baseweb="tab-list"] { gap: 28px; }
-    .stTabs [data-baseweb="tab"] { font-size: 16px; font-weight: 600; padding: 12px 20px; }
-    
-    /* Premium UI Card Design for Experience & Projects */
-    .metric-card {
-        background-color: rgba(28, 131, 225, 0.05);
-        border: 1px solid rgba(28, 131, 225, 0.15);
-        padding: 20px;
-        border-radius: 12px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
-        margin-bottom: 15px;
+    /* Global Background and Text Overrides */
+    .main {
+        background-color: #0A0F1D !important;
+        color: #E2E8F0 !important;
     }
-    .skill-badge {
-        background-color: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        padding: 6px 14px;
-        border-radius: 20px;
+    header, footer, .stDeployButton { display: none !important; }
+    
+    /* Elegant Minimalist Card Design */
+    .premium-card {
+        background: #111827;
+        border: 1px solid #1F2937;
+        padding: 24px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+    
+    /* Custom Styling for Project Metric Highlights */
+    .metric-value {
+        font-size: 32px;
+        font-weight: 700;
+        color: #38BDF8;
+        font-family: monospace;
+    }
+    .metric-label {
+        font-size: 13px;
+        color: #9CA3AF;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    
+    /* Clean Minimalist Custom Badges for Skills */
+    .tech-badge {
+        background-color: #1F2937;
+        color: #38BDF8;
+        border: 1px solid #374151;
+        padding: 4px 12px;
+        border-radius: 4px;
         display: inline-block;
         margin: 4px;
-        font-size: 14px;
+        font-size: 13px;
+        font-family: monospace;
     }
+    
+    /* Custom divider line */
+    .minimal-line {
+        border-bottom: 1px solid #1F2937;
+        margin: 25px 0;
+    }
+    
+    /* Custom style for raw logs code block */
+    code { color: #F43F5E !important; }
     </style>
 """, unsafe_allow_html=True)
 
-# 2. Sidebar Navigation & Global Info
+# 3. Sidebar Navigation & Contact Aligned with Minimal Theme
 with st.sidebar:
-    st.title("Krish Tamboli")
-    st.caption("Data Science Specialist & System Analytics Graduate")
-    st.markdown("---")
+    st.markdown("### KRISH TAMBOLI [cite: 1]")
+    st.caption("Data Systems & Analytics Specialist")
+    st.markdown("<div class='minimal-line'></div>", unsafe_allow_html=True)
     
-    st.markdown("### 📬 Contact Details")
-    st.markdown("📍 Frankfurt, Germany")
-    st.markdown("📞 +49 15510685501")
-    st.markdown("✉️ [krishtamboli10@gmail.com](mailto:krishtamboli10@gmail.com)")
-    st.markdown("💼 [LinkedIn Profile](https://linkedin.com)")
-    st.markdown("💻 [GitHub Profile](https://github.com/krishtamboli)")
-    st.markdown("---")
+    st.markdown("🌐 **Location:** Frankfurt, Germany [cite: 2]")
+    st.markdown("✉️ [krishtamboli10@gmail.com](mailto:krishtamboli10@gmail.com) [cite: 2]")
+    st.markdown("📞 +49 15510685501 [cite: 2]")
+    st.markdown("<div class='minimal-line'></div>", unsafe_allow_html=True)
     
-    # Elegant Availability Status
-    st.info("💡 **Availability:** Open to Working Student & Data Operations roles within Germany.")
+    st.markdown("🔗 **Networks**")
+    st.markdown("[LinkedIn Profile](https://linkedin.com) [cite: 2]")
+    st.markdown("[GitHub Repositories](https://github.com/krishtamboli)")
+    st.markdown("<div class='minimal-line'></div>", unsafe_allow_html=True)
+    
+    st.caption("💼 Current Status:")
+    st.write("Open to Working Student & Data Operations roles within Germany.")
 
-# 3. Hero Layout (Split view: Profile text on left, verified metrics on right)
-hero_col1, hero_col2 = st.columns([2.5, 1], gap="large")
+# 4. Hero Presentation Layout
+st.markdown("<br>", unsafe_allow_html=True)
+h_col1, h_col2, h_col3 = st.columns([3, 1, 1])
 
-with hero_col1:
-    st.title("Turning Raw Backend Infrastructure into Actionable Business Intelligence 🚀")
+with h_col1:
+    st.markdown("<h1 style='color: #FFFFFF; font-size: 42px; font-weight: 800; letter-spacing: -1px;'>Systems Engineering & Data Health</h1>", unsafe_allow_html=True)
     st.markdown(
-        "I am a Master's student in **High Integrity Systems** who actually enjoys the detective work involved in data. "
-        "Most people stop after getting simple graphs, but I prefer doing deep dives into raw backend datasets to isolate hidden patterns, "
-        "find processing anomalies, and investigate system bottlenecks."
+        "I am a Master's student in **High Integrity Systems** specializing in data detective work[cite: 4]. "
+        "While standard workflows focus on simple visualization, I specialize in deep-diving raw backend datasets [cite: 5] "
+        "to isolate hidden structural anomalies, clean chaotic records, and eliminate system processing bottlenecks[cite: 5]."
     )
 
-with hero_col2:
-    # High impact numeric highlights directly from your real achievements
-    st.metric(label="Monitoring Overhead Cut", value="-40%")
-    st.metric(label="Database Reliability Lift", value="+15%")
+with h_col2:
+    st.markdown('<div class="premium-card"><span class="metric-label">Overhead Cut</span><br><span class="metric-value">-40%</span></div>', unsafe_allow_html=True)
 
-st.markdown("---")
+with h_col3:
+    st.markdown('<div class="premium-card"><span class="metric-label">Reliability Lift</span><br><span class="metric-value">+15%</span></div>', unsafe_allow_html=True)
 
-# 4. Interactive Navigation Workspace
-tab1, tab2, tab3, tab4 = st.tabs([
-    "📊 Commercial Analytics Sandbox", 
-    "🛠️ Technical Ecosystem", 
-    "💼 Professional Journey",
-    "📜 Certifications & Background"
-])
+st.markdown("<div class='minimal-line'></div>", unsafe_allow_html=True)
+
+# 5. Modular Workspace Tabs
+tab1, tab2, tab3 = st.tabs(["⚡ Live Data Cleaning Pipeline", "🛠️ Verified Tech Stack", "💼 Experience & Credentials"])
 
 with tab1:
-    st.subheader("Featured Project Workspace")
-    
-    # Multi-column strategic layout for your case study
-    col_dash, col_alert = st.columns(2, gap="medium")
-    
-    with col_dash:
-        st.markdown("""
-        <div class="metric-card">
-            <h3>📈 Case Study 1: Commercial Performance Analytics Dashboard</h3>
-            <p>Automated complex commercial data workflows using Python and SQL to systematically extract and clean raw transactional inputs.</p>
-            <p><strong>Impact:</strong> Unified scattered historical metrics to track organizational KPIs, regional growth vectors, and YoY product performance.</p>
-            <p><small>🧰 Tools: Power BI, MS Excel, Power Query, Python</small></p>
-        </div>
-        """, unsafe_allow_html=True)
-        
-    with col_alert:
-        st.markdown("""
-        <div class="metric-card">
-            <h3>🔔 Case Study 2: Automated KPI Reporting & Stakeholder Alerts</h3>
-            <p>Integrated transactional SQL stored procedures directly with cloud-native Power Automate configurations.</p>
-            <p><strong>Impact:</strong> Eliminated manual data validation bottlenecks by triggering real-time email notifications the moment critical performance thresholds are breached.</p>
-            <p><small>🧰 Tools: SQL, Power Automate, Power BI</small></p>
-        </div>
-        """, unsafe_allow_html=True)
-
-    st.markdown("### 🎛️ Live Interactive Ledger Sandbox")
-    st.caption("Interact with the dashboard logic below to observe how the filter query cleans up downstream transactional logs.")
-    
-    # Mock dataset representing structural ledger data
-    mock_ledger = pd.DataFrame({
-        "transaction_id": [10024, 10025, 10026, 10027, 10028],
-        "region": ["Frankfurt", "Berlin", "Munich", "Hamburg", "Frankfurt"],
-        "revenue_val": [1250, 4300, 1500, 950, 6100],
-        "anomaly_flag": [False, False, True, False, False],
-        "log_time": ["12:00", "12:05", "12:10", "12:15", "12:20"]
-    })
-    
-    filter_choice = st.radio(
-        "Apply Data Security Filter View:", 
-        ["Show All System Logs", "Clean Operational Records Only", "Isolated Anomalies Only (System Exceptions)"], 
-        horizontal=True
+    st.markdown("<h3 style='color: #FFFFFF;'>Live Processing Pipeline Optimization</h3>", unsafe_allow_html=True)
+    st.write(
+        "Instead of just describing data cleaning conceptually, this module executes live Python string parsing "
+        "and type validation over an incoming corrupt production transaction stream log."
     )
     
-    if filter_choice == "Clean Operational Records Only":
-        display_df = mock_ledger[mock_ledger["anomaly_flag"] == False]
-    elif filter_choice == "Isolated Anomalies Only (System Exceptions)":
-        display_df = mock_ledger[mock_ledger["anomaly_flag"] == True]
-    else:
-        display_df = mock_ledger
-        
-    st.dataframe(display_df, use_container_width=True)
+    # The Raw Data Input
+    st.markdown("#### 1. The Incoming Corrupt Log Stream")
+    st.write("This raw, unstructured text block represents unvalidated application payloads entering the ecosystem:")
     
-    # Plotly Chart reflecting user choices live
-    fig = px.line(display_df, x="log_time", y="revenue_val", markers=True, title="Real-Time System Log Valuation Stream")
-    st.plotly_chart(fig, use_container_width=True)
+    raw_log_data = [
+        "TXN_ID:10024|REG:Frankfurt|VAL:1250EUR|STATUS:VALID",
+        "TXN_ID:10025|REG:Berlin|VAL:4300_ERR_NaN|STATUS:CORRUPT",
+        "TXN_ID:10026|REG:Munich|VAL:1500EUR|STATUS:VALID",
+        "TXN_ID:NULL_ID|REG:Hamburg|VAL:950EUR|STATUS:MISSING_ID",
+        "TXN_ID:10028|REG:Frankfurt|VAL:6100EUR|STATUS:VALID"
+    ]
+    st.code("\n".join(raw_log_data), language="text")
+
+    st.markdown("<div class='minimal-line'></div>", unsafe_allow_html=True)
+
+    # The Interactive Pipeline Trigger
+    st.markdown("#### 2. Execute Data Cleaning Pipeline Logic")
+    st.write("Toggle the execution block to inject the cleaning engine script using Python Pandas and regular expressions (Regex).")
+    
+    run_pipeline = st.checkbox("🚀 Click to Run Cleaning & Optimization Script")
+    
+    if run_pipeline:
+        parsed_records = []
+        
+        for line in raw_log_data:
+            # Step A: String splitting and key-value mapping
+            parts = dict(item.split(":") for item in line.split("|"))
+            
+            # Step B: Data Cleaning Logic (Regex extraction of numerical values, handling anomalies)
+            raw_val = parts["VAL"]
+            clean_val = re.sub(r"[^\d]", "", raw_val) # Strip out "EUR", "_ERR_NaN", etc.
+            
+            # Type casting with fallback routing
+            if clean_val == "":
+                numeric_val = 0
+                anomaly_note = "Missing Value Coerced to 0"
+            else:
+                numeric_val = int(clean_val)
+                anomaly_note = "Clean Operational Record"
+                
+            # Handling structural record identifiers
+            if parts["TXN_ID"] == "NULL_ID":
+                parts["TXN_ID"] = "00000" # Imputing dummy key for system continuity
+                anomaly_note = "Structural Malformation: Null Key Imputed"
+            
+            parsed_records.append({
+                "Transaction ID": parts["TXN_ID"],
+                "Region": parts["REG"],
+                "Revenue (Numeric)": numeric_val,
+                "Pipeline Flag": anomaly_note
+            })
+            
+        # Convert to Pandas DataFrame live
+        df_cleaned = pd.DataFrame(parsed_records)
+        
+        st.success("✅ Script Executed Successfully. Output Structured Ledger Layout:")
+        st.dataframe(df_cleaned, use_container_width=True)
+        
+        # Display the real data cleaning script inside the portfolio
+        st.markdown("#### 🛠️ Code Behind This Cleaning Module")
+        st.write("This is the exact logical architecture running inside the sandbox to construct the structured frame:")
+        st.code("""
+# Real engineering logic running live above:
+parsed_records = []
+for line in raw_log_data:
+    parts = dict(item.split(":") for item in line.split("|"))
+    
+    # Strip alphabetical noise/errors from currency metrics using regex
+    clean_val = re.sub(r"[^\d]", "", parts["VAL"])
+    numeric_val = int(clean_val) if clean_val != "" else 0
+    
+    # Impute missing primary database keys
+    if parts["TXN_ID"] == "NULL_ID":
+        parts["TXN_ID"] = "00000"
+        
+    parsed_records.append({
+        "Transaction ID": parts["TXN_ID"],
+        "Region": parts["REG"],
+        "Revenue (Numeric)": numeric_val
+    })
+df_cleaned = pd.DataFrame(parsed_records)
+        """, language="python")
+
+    else:
+        st.info("Pipeline Idle. Check the checkbox above to execute the data transformation script live.")
 
 with tab2:
-    st.subheader("Validated Engineering Stack")
-    st.caption("Categorized structural specializations compiled from active production environments.")
+    st.markdown("<h3 style='color: #FFFFFF;'>Technical Capability Spectrum</h3>", unsafe_allow_html=True)
     
-    sk_col1, sk_col2, sk_col3 = st.columns(3)
-    with sk_col1:
-        st.markdown("#### ⚙️ Functional Expertise")
-        skills_f = ["Data Analysis", "Data Visualization", "Pattern Identification", "Structural Anomaly Detection", "Process Optimization", "KPI Dashboards", "User Behavior Tracking"]
-        for s in skills_f:
-            st.markdown(f'<span class="skill-badge">{s}</span>', unsafe_allow_html=True)
+    sc1, sc2, sc3 = st.columns(3)
+    with sc1:
+        st.markdown("<h5 style='color: #38BDF8;'>Data Diagnostics</h5>", unsafe_allow_html=True)
+        skills_d = ["Data Analysis", "Pattern Identification", "Structural Anomaly Detection", "Process Optimization", "User Behavior Tracking"] [cite: 9, 10]
+        for s in skills_d:
+            st.markdown(f'<span class="tech-badge">{s}</span>', unsafe_allow_html=True)
             
-    with sk_col2:
-        st.markdown("#### 💻 Technical Infrastructure")
-        skills_t = ["SQL", "Python (Pandas/NumPy)", "Power BI", "Power Automate", "MS Excel (Advanced)", "Tableau", "VBA / Macros"]
-        for s in skills_t:
-            st.markdown(f'<span class="skill-badge">{s}</span>', unsafe_allow_html=True)
+    with sc2:
+        st.markdown("<h5 style='color: #38BDF8;'>Engineering Core</h5>", unsafe_allow_html=True)
+        skills_e = ["SQL", "Python (Pandas/NumPy)", "Power Automate", "ETL Pipeline Design", "VBA / Macros"] [cite: 11, 12]
+        for s in skills_e:
+            st.markdown(f'<span class="tech-badge">{s}</span>', unsafe_allow_html=True)
             
-    with sk_col3:
-        st.markdown("#### 🤝 Methodologies & Tools")
-        skills_s = ["Analytical Thinking", "Cross-functional Collaboration", "JIRA Ticket Tracking", "Agile Methodologies", "Documentation"]
-        for s in skills_s:
-            st.markdown(f'<span class="skill-badge">{s}</span>', unsafe_allow_html=True)
+    with sc3:
+        st.markdown("<h5 style='color: #38BDF8;'>Reporting & Ops</h5>", unsafe_allow_html=True)
+        skills_r = ["Power BI", "Tableau", "Advanced MS Excel", "JIRA Tracking", "Agile Methodologies"] [cite: 11, 12, 13]
+        for s in skills_r:
+            st.markdown(f'<span class="tech-badge">{s}</span>', unsafe_allow_html=True)
 
 with tab3:
-    st.subheader("Professional History")
+    st.markdown("<h3 style='color: #FFFFFF;'>Chronological Record</h3>", unsafe_allow_html=True)
     
-    # Structuring eClinicalWorks experience inside a beautiful container
     st.markdown("""
-    <div class="metric-card">
-        <span style="float: right; color: gray;">June 2022 – Aug 2024</span>
-        <h4 style="margin: 0; color: #1C83E1;">Software Specialist (Data Analytics)</h4>
-        <strong style="color: gray;">eClinicalWorks | Mumbai</strong>
-        <ul style="margin-top: 10px; padding-left: 20px;">
-            <li>Conducted deep-dive SQL investigations into over 200 customer master records to isolate and resolve validation errors, improving master database reliability by 15% and ensuring clear data tracking for downstream transactional reports.</li>
-            <li>Built automated stakeholder alert workflows using Power Automate that flagged performance deviations and triggered targeted notifications in real time, cutting monitoring overhead by 40% across all active reporting pipelines.</li>
-            <li>Designed interactive Power BI dashboards to track operational KPIs while utilizing Jira to document and coordinate high-priority data exceptions, creating unified technical workflows that improved data visibility for cross-functional teams.</li>
-            <li>Coordinated cross-functional workflows across business, product, and IT teams in an agile environment, standardising reporting definitions, translating business requirements into technical solutions, and supporting 5 departments at the business-IT interface.</li>
-        </ul>
+    <div class="premium-card">
+        <span style="float: right; color: #9CA3AF; font-size:14px; font-family: monospace;">June 2022 – Aug 2024</span>
+        <h4 style="margin: 0; color: #38BDF8;">Software Specialist (Data Analytics)</h4>
+        <strong style="color: #9CA3AF;">eClinicalWorks | Mumbai</strong>
+        <p style="font-size:14px; color: #E2E8F0; margin-top:10px;">
+        • Conducted deep-dive SQL investigations into over 200 customer master records to isolate and resolve validation errors, improving master database reliability by 15% and ensuring clear data tracking for downstream transactional reports.<br> [cite: 17]
+        • Built automated stakeholder alert workflows using Power Automate that flagged performance deviations and triggered targeted notifications in real time, cutting monitoring overhead by 40% across all active reporting pipelines.<br> [cite: 18]
+        • Designed interactive Power BI dashboards to track operational KPIs while utilizing Jira to document and coordinate high-priority data exceptions, creating unified technical workflows that improved data visibility for cross-functional teams.<br> [cite: 19]
+        • Coordinated cross-functional workflows across business, product, and IT teams in an agile environment, standardising reporting definitions, translating business requirements into technical solutions, and supporting 5 departments at the business-IT interface. [cite: 20]
+        </p>
     </div>
     """, unsafe_allow_html=True)
-
-with tab4:
-    st.subheader("Academic Foundations & Verified Certifications")
     
-    ed_col1, ed_col2 = st.columns(2)
-    with ed_col1:
-        st.markdown("#### 🎓 Education")
-        st.markdown("**MSc in Computer Science (Focus: High Integrity Systems)**")
-        st.caption("Frankfurt University of Applied Sciences | Germany")
-        
-        st.markdown("**BSc in Computer Science**")
-        st.caption("Mumbai University | India")
-        
-        st.markdown("🗣️ **Languages:** English (Fluent C1) | German (Actively Learning A2)")
-        
-    with ed_col2:
-        st.markdown("#### 📜 Technical Credentials")
-        st.write("✔️ **Java Programming** — IIT Bombay (Spoken Tutorial)")
-        st.write("✔️ **HTML, CSS & JavaScript** — Vidyalankar School of IT")
-        st.write("✔️ **MongoDB** — Vidyalankar School of IT")
+    col_ed1, col_ed2 = st.columns(2)
+    with col_ed1:
+        st.markdown("""
+        <div class="premium-card">
+            <h4 style="color: #38BDF8; margin-top:0;">Academic Record</h4>
+            <p style="margin:0; font-weight:600;">MSc in Computer Science (High Integrity Systems)</p> [cite: 33]
+            <p style="color:#9CA3AF; font-size:14px; margin:0;">Frankfurt University of Applied Sciences | Germany</p> [cite: 33]
+            <br>
+            <p style="margin:0; font-weight:600;">BSc in Computer Science</p> [cite: 34]
+            <p style="color:#9CA3AF; font-size:14px; margin:0;">Mumbai University | India</p> [cite: 34]
+        </div>
+        """, unsafe_allow_html=True)
+    with col_ed2:
+        st.markdown("""
+        <div class="premium-card">
+            <h4 style="color: #38BDF8; margin-top:0;">Verified Credentials</h4>
+            <p style="margin:0; font-size:14px;">✔️ Java Programming — IIT Bombay (Spoken Tutorial)</p> [cite: 30]
+            <p style="margin:5px 0; font-size:14px;">✔️ MongoDB Developer — Vidyalankar School of IT</p> [cite: 31]
+            <p style="margin:0; font-size:14px;">✔️ HTML, CSS & JavaScript — Vidyalankar School of IT</p> [cite: 30]
+            <br>
+            <p style="margin:0; font-size:14px; color:#9CA3AF;">🗣️ Languages: English (Fluent C1) | German (Actively Learning A2)</p> [cite: 36]
+        </div>
+        """, unsafe_allow_html=True)
