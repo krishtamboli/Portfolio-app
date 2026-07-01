@@ -94,14 +94,14 @@ st.markdown("""
 # 3. Sidebar Configuration
 with st.sidebar:
     st.markdown("<h2 style='color: white; margin-bottom:0;'>KRISH TAMBOLI</h2>", unsafe_allow_html=True)
-    st.caption("Data Systems & Analytics Specialist")
+    st.caption("Data Science Specialist")
     st.markdown("---")
-    st.markdown("🌐 **Location:** Frankfurt, Germany")
-    st.markdown("✉️ krishtamboli10@gmail.com")
-    st.markdown("📞 +49 15510685501")
+    st.markdown("🌐 **Location:** Frankfurt, Germany [cite: 2]")
+    st.markdown("✉️ krishtamboli10@gmail.com [cite: 2]")
+    st.markdown("📞 +49 15510685501 [cite: 2]")
     st.markdown("---")
     st.markdown("🔗 **Networks**")
-    st.markdown("[LinkedIn Profile](https://linkedin.com)")
+    st.markdown("[LinkedIn Profile](https://linkedin.com) [cite: 2]")
     st.markdown("[GitHub Repositories](https://github.com/krishtamboli)")
     st.markdown("---")
     st.caption("💼 Current Status:")
@@ -110,7 +110,7 @@ with st.sidebar:
 # 4. Premium Top Hero Grid
 st.markdown("<br>", unsafe_allow_html=True)
 st.markdown("<div class='hero-name'>Krish Tamboli</div>", unsafe_allow_html=True)
-st.markdown("<div class='hero-subtitle'>Systems Engineering & Data Health</div>", unsafe_allow_html=True)
+st.markdown("<div class='hero-subtitle'>Data Science & Data Engineering</div>", unsafe_allow_html=True)
 
 st.markdown(
     "I am a Master's student in **High Integrity Systems** who actually enjoys the detective work involved in data[cite: 4]. "
@@ -136,7 +136,6 @@ tab1, tab2, tab3 = st.tabs(["⚡ Featured Project & Pipeline", "🛠️ Technica
 with tab1:
     st.markdown("<div class='section-title'>Featured Project: Real-Time Stream Ingestion Engine</div>", unsafe_allow_html=True)
     
-    # Custom Gliding Card for the Kafka Pipeline Case Study
     st.markdown("""
     <div class="interactive-card">
         <h4 style="color: #38BDF8; margin-top:0;">Kafka ➔ Databricks Medallion Architecture</h4>
@@ -237,7 +236,7 @@ with tab2:
 with tab3:
     st.markdown("<div class='section-title'>Chronological Record</div>", unsafe_allow_html=True)
     
-    # Gliding Job Container Card
+    # Job Container Card
     st.markdown("""
     <div class="interactive-card">
         <span style="float: right;" class="job-meta">June 2022 – Aug 2024</span>
@@ -250,7 +249,7 @@ with tab3:
         • Coordinated cross-functional workflows across business, product, and IT teams in an agile environment, standardising reporting definitions, translating business requirements into technical solutions, and supporting 5 departments at the business-IT interface.<br>
         </p>
     </div>
-    """, unsafe_allow_html=True) [cite: 16, 17, 18, 19, 20]
+    """, unsafe_allow_html=True)
     
     col_ed1, col_ed2 = st.columns(2)
     with col_ed1:
@@ -263,16 +262,16 @@ with tab3:
             <p style="margin:0; font-weight:600; font-size:15px;">BSc in Computer Science</p>
             <p style="color:#9CA3AF; font-size:13px; margin:0; font-family: monospace;">Mumbai University | India</p>
         </div>
-        """, unsafe_allow_html=True) [cite: 33, 34]
+        """, unsafe_allow_html=True)
         
     with col_ed2:
         st.markdown("""
         <div class="interactive-card">
             <div class="job-header" style="margin-bottom:10px;">Technical Credentials</div>
-            <p style="margin:0; font-size:14px; color:#E2E8F0;">✔️ Java Programming — IIT Bombay (Spoken Tutorial)</p> 
+            <p style="margin:0; font-size:14px; color:#E2E8F0;">✔️ Java Programming — IIT Bombay (Spoken Tutorial)</p>
             <p style="margin:6px 0; font-size:14px; color:#E2E8F0;">✔️ MongoDB Developer — Vidyalankar School of IT</p>
             <p style="margin:0; font-size:14px; color:#E2E8F0;">✔️ HTML, CSS & JavaScript — Vidyalankar School of IT</p>
             <br>
             <p style="margin:0; font-size:13px; color:#9CA3AF; font-family: monospace;">🗣️ Languages: English (Fluent C1) | German (A2)</p>
         </div>
-        """, unsafe_allow_html=True) [cite: 30, 31, 36]
+        """, unsafe_allow_html=True)
