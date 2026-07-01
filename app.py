@@ -5,17 +5,15 @@ import re
 # 1. Page Configuration
 st.set_page_config(page_title="Krish Tamboli | Portfolio", page_icon="⚡", layout="wide")
 
-# 2. Advanced CSS Animation & Theme Injection
+# 2. Advanced CSS Theme Injection
 st.markdown("""
     <style>
-    /* Global Theme Overrides */
     .main {
         background-color: #0A0F1D !important;
         color: #E2E8F0 !important;
     }
     header, footer, .stDeployButton { display: none !important; }
     
-    /* Gliding Portfolio Title Typography */
     .hero-name {
         font-size: 56px;
         font-weight: 800;
@@ -32,7 +30,6 @@ st.markdown("""
         margin-bottom: 25px;
     }
 
-    /* Interactive Gliding Card Animation Setup */
     .interactive-card {
         background: #111827;
         border: 1px solid #1F2937;
@@ -47,7 +44,6 @@ st.markdown("""
         box-shadow: 0 10px 20px rgba(56, 189, 248, 0.05);
     }
 
-    /* Core Section Sizing Headers */
     .section-title {
         color: #FFFFFF;
         font-size: 22px;
@@ -57,7 +53,6 @@ st.markdown("""
         padding-left: 12px;
     }
 
-    /* Tech Stack Minimalist Badges */
     .custom-badge {
         background-color: #1F2937;
         color: #38BDF8;
@@ -76,7 +71,6 @@ st.markdown("""
         color: #0A0F1D;
     }
 
-    /* Custom Sub-headers for Jobs */
     .job-header {
         font-size: 18px;
         font-weight: 700;
@@ -96,29 +90,29 @@ with st.sidebar:
     st.markdown("<h2 style='color: white; margin-bottom:0;'>KRISH TAMBOLI</h2>", unsafe_allow_html=True)
     st.caption("Data Science Specialist")
     st.markdown("---")
-    st.markdown("🌐 **Location:** Frankfurt, Germany [cite: 2]")
-    st.markdown("✉️ krishtamboli10@gmail.com [cite: 2]")
-    st.markdown("📞 +49 15510685501 [cite: 2]")
+    st.markdown("🌐 **Location:** Frankfurt, Germany")
+    st.markdown("✉️ krishtamboli10@gmail.com")
+    st.markdown("📞 +49 15510685501")
     st.markdown("---")
     st.markdown("🔗 **Networks**")
-    st.markdown("[LinkedIn Profile](https://linkedin.com) [cite: 2]")
+    st.markdown("[LinkedIn Profile](https://linkedin.com)")
     st.markdown("[GitHub Repositories](https://github.com/krishtamboli)")
     st.markdown("---")
     st.caption("💼 Current Status:")
     st.info("Open to Working Student & Data Operations roles within Germany.")
 
-# 4. Premium Top Hero Grid
+# 4. Top Hero Segment
 st.markdown("<br>", unsafe_allow_html=True)
 st.markdown("<div class='hero-name'>Krish Tamboli</div>", unsafe_allow_html=True)
 st.markdown("<div class='hero-subtitle'>Data Science & Data Engineering</div>", unsafe_allow_html=True)
 
 st.markdown(
-    "I am a Master's student in **High Integrity Systems** who actually enjoys the detective work involved in data[cite: 4]. "
+    "I am a Master's student in **High Integrity Systems** who actually enjoys the detective work involved in data. "
     "While standard workflows focus on simple visualization charts, I specialize in deep-diving raw backend datasets "
-    "to isolate hidden structural anomalies, clean chaotic production records, and eliminate processing infrastructure bottlenecks[cite: 5]."
+    "to isolate hidden structural anomalies, clean chaotic production records, and eliminate processing infrastructure bottlenecks."
 )
 
-# Highlights Metrics Grid
+# Metric Summary Rows
 st.markdown("<br>", unsafe_allow_html=True)
 m_col1, m_col2, m_col3 = st.columns(3)
 with m_col1:
@@ -130,31 +124,17 @@ with m_col3:
 
 st.markdown("<br>", unsafe_allow_html=True)
 
-# 5. Operational Tabs
-tab1, tab2, tab3 = st.tabs(["⚡ Featured Project & Pipeline", "🛠️ Technical Capability Spectrum", "💼 Experience & Credentials"])
+# 5. Core Navigation Tabs
+t1, t2, t3 = st.tabs(["⚡ Featured Project & Pipeline", "🛠️ Technical Capability Spectrum", "💼 Experience & Credentials"])
 
-with tab1:
+with t1:
     st.markdown("<div class='section-title'>Featured Project: Real-Time Stream Ingestion Engine</div>", unsafe_allow_html=True)
-    
-    st.markdown("""
-    <div class="interactive-card">
-        <h4 style="color: #38BDF8; margin-top:0;">Kafka ➔ Databricks Medallion Architecture</h4>
-        <p style="font-size: 14px; color: #9CA3AF;">Engineered an end-to-end cloud ingestion pipeline designed to ingest, parse, and structure high-volume messaging payloads from Apache Kafka cluster topics into a structured Databricks workspace environment.</p>
-        <p style="font-size: 14px; color: #E2E8F0;"><strong>Key Contributions:</strong> Developed automated Python and PySpark streaming data tasks to process unstructured incoming event logs. Resolved partition bottleneck latency under high testing loads. Applied clean Slowly Changing Dimension (SCD Type 2) tracking schemas to ensure transactional data updates retain permanent structural log history without causing database performance lag.</p>
-        <p style="font-size: 13px; color: #38BDF8; font-family: monospace;">🧰 Stack: Apache Kafka, PySpark, Databricks Delta Lake, Cloud Data Engineering, SQL</p>
-    </div>
-    """, unsafe_allow_html=True)
+    st.markdown('<div class="interactive-card"><h4 style="color: #38BDF8; margin-top:0;">Kafka ➔ Databricks Medallion Architecture</h4><p style="font-size: 14px; color: #9CA3AF;">Engineered an end-to-end cloud ingestion pipeline designed to ingest, parse, and structure high-volume messaging payloads from Apache Kafka cluster topics into a structured Databricks workspace environment.</p><p style="font-size: 14px; color: #E2E8F0;"><strong>Key Contributions:</strong> Developed automated Python and PySpark streaming data tasks to process unstructured incoming event logs. Resolved partition bottleneck latency under high testing loads. Applied clean Slowly Changing Dimension (SCD Type 2) tracking schemas to ensure transactional data updates retain permanent structural log history without causing database performance lag.</p><p style="font-size: 13px; color: #38BDF8; font-family: monospace;">🧰 Stack: Apache Kafka, PySpark, Databricks Delta Lake, Cloud Data Engineering, SQL</p></div>', unsafe_allow_html=True)
     
     st.markdown("<br>", unsafe_allow_html=True)
-    
     st.markdown("<div class='section-title'>Live Code Simulation: Anomalous Log Investigator</div>", unsafe_allow_html=True)
-    st.write(
-        "To visually demonstrate how the pipeline handles data malformations live, this module executes real-time string parsing "
-        "and regex-driven type validation algorithms over an incoming uncleaned transactional infrastructure stream log."
-    )
+    st.write("To visually demonstrate how the pipeline handles data malformations live, this module executes real-time string parsing and regex-driven type validation algorithms over an incoming uncleaned transactional infrastructure stream log.")
     
-    # Raw log container layout
-    st.markdown("#### 1. Incoming Corrupt Infrastructure Stream Input")
     raw_log_data = [
         "TXN_ID:10024|REG:Frankfurt|VAL:1250EUR|STATUS:VALID",
         "TXN_ID:10025|REG:Berlin|VAL:4300_ERR_NaN|STATUS:CORRUPT",
@@ -165,12 +145,9 @@ with tab1:
     st.text("\n".join(raw_log_data))
 
     st.markdown("<br>", unsafe_allow_html=True)
-
-    # Interactive Engine Execution Trigger
-    st.markdown("#### 2. Deploy Automated Processing Script Pipeline")
-    run_pipeline = st.checkbox("🚀 Click to Run Cleaning & Optimization Script")
+    run_p = st.checkbox("🚀 Click to Run Cleaning & Optimization Script")
     
-    if run_pipeline:
+    if run_p:
         parsed_records = []
         for line in raw_log_data:
             parts = dict(item.split(":") for item in line.split("|"))
@@ -195,83 +172,31 @@ with tab1:
                 "Pipeline Flag": anomaly_note
             })
             
-        df_cleaned = pd.DataFrame(parsed_records)
-        st.success("✅ Engine Parsing Complete. Structured Production Ledger Output:")
-        st.dataframe(df_cleaned, use_container_width=True)
-        
-        st.markdown("#### 🛠️ Live Python Engine Code Block")
-        st.code("""
-# Pipeline architecture currently processing the metrics above:
-parsed_records = []
-for line in raw_log_data:
-    parts = dict(item.split(":") for item in line.split("|"))
-    clean_val = re.sub(r"[^\d]", "", parts["VAL"])
-    numeric_val = int(clean_val) if clean_val != "" else 0
-    if parts["TXN_ID"] == "NULL_ID":
-        parts["TXN_ID"] = "00000"
-        """, language="python")
-    else:
-        st.info("Pipeline Engine Idle. Toggle the checkbox configuration parameter above to test the live parser stream.")
+        st.success("✅ Engine Parsing Complete. Structured Output:")
+        st.dataframe(pd.DataFrame(parsed_records), use_container_width=True)
 
-with tab2:
+with t2:
     st.markdown("<div class='section-title'>Technical Capability Spectrum</div>", unsafe_allow_html=True)
-    
-    sc1, sc2, sc3 = st.columns(3)
-    with sc1:
+    c1, c2, c3 = st.columns(3)
+    with c1:
         st.markdown("<h4 style='color:white; font-size:16px;'>Data Diagnostics</h4>", unsafe_allow_html=True)
-        skills_d = ["Data Analysis", "Data Visualization", "Pattern Identification", "Structural Anomaly Detection", "Process Optimization", "User Behavior Tracking"] [cite: 9, 10]
-        for s in skills_d:
+        for s in ["Data Analysis", "Data Visualization", "Pattern Identification", "Structural Anomaly Detection", "Process Optimization", "User Behavior Tracking"]:
             st.markdown(f'<span class="custom-badge">{s}</span>', unsafe_allow_html=True)
-    with sc2:
+    with c2:
         st.markdown("<h4 style='color:white; font-size:16px;'>Engineering Core</h4>", unsafe_allow_html=True)
-        skills_e = ["SQL", "Python (Pandas/NumPy)", "Power Automate", "ETL Pipeline Design", "VBA / Macros"] [cite: 11, 12]
-        for s in skills_e:
+        for s in ["SQL", "Python (Pandas/NumPy)", "Power Automate", "ETL Pipeline Design", "VBA / Macros"]:
             st.markdown(f'<span class="custom-badge">{s}</span>', unsafe_allow_html=True)
-    with sc3:
+    with c3:
         st.markdown("<h4 style='color:white; font-size:16px;'>Reporting & Analytics</h4>", unsafe_allow_html=True)
-        skills_r = ["Power BI", "Tableau", "Advanced MS Excel", "JIRA Tracking", "Agile Frameworks"] [cite: 11, 12, 13]
-        for s in skills_r:
+        for s in ["Power BI", "Tableau", "Advanced MS Excel", "JIRA Tracking", "Agile Frameworks"]:
             st.markdown(f'<span class="custom-badge">{s}</span>', unsafe_allow_html=True)
 
-with tab3:
+with t3:
     st.markdown("<div class='section-title'>Chronological Record</div>", unsafe_allow_html=True)
-    
-    # Job Container Card
-    st.markdown("""
-    <div class="interactive-card">
-        <span style="float: right;" class="job-meta">June 2022 – Aug 2024</span>
-        <div class="job-header">Software Specialist (Data Analytics)</div>
-        <div style="color: #9CA3AF; font-size: 14px; margin-bottom: 12px;">eClinicalWorks | Mumbai</div>
-        <p style="font-size:14px; color: #E2E8F0; line-height: 1.6;">
-        • Conducted deep-dive SQL investigations into over 200 customer master records to isolate and resolve validation errors, improving master database reliability by 15% and ensuring data tracking for downstream transactional reports.<br>
-        • Built automated stakeholder alert workflows using Power Automate that flagged performance deviations and triggered targeted notifications in real time, cutting monitoring overhead by 40% across all active reporting pipelines.<br>
-        • Designed interactive Power BI dashboards to track operational KPIs while utilizing Jira to document and coordinate high-priority data exceptions, creating unified technical workflows that improved data visibility for cross-functional teams.<br>
-        • Coordinated cross-functional workflows across business, product, and IT teams in an agile environment, standardising reporting definitions, translating business requirements into technical solutions, and supporting 5 departments at the business-IT interface.<br>
-        </p>
-    </div>
-    """, unsafe_allow_html=True)
+    st.markdown('<div class="interactive-card"><span style="float: right;" class="job-meta">June 2022 – Aug 2024</span><div class="job-header">Software Specialist (Data Analytics)</div><div style="color: #9CA3AF; font-size: 14px; margin-bottom: 12px;">eClinicalWorks | Mumbai</div><p style="font-size:14px; color: #E2E8F0; line-height: 1.6;">• Conducted deep-dive SQL investigations into over 200 customer master records to isolate and resolve validation errors, improving master database reliability by 15% and ensuring data tracking for downstream transactional reports.<br>• Built automated stakeholder alert workflows using Power Automate that flagged performance deviations and triggered targeted notifications in real time, cutting monitoring overhead by 40% across all active reporting pipelines.<br>• Designed interactive Power BI dashboards to track operational KPIs while utilizing Jira to document and coordinate high-priority data exceptions, creating unified technical workflows that improved data visibility for cross-functional teams.<br>• Coordinated cross-functional workflows across business, product, and IT teams in an agile environment, standardising reporting definitions, translating business requirements into technical solutions, and supporting 5 departments at the business-IT interface.<br></p></div>', unsafe_allow_html=True)
     
     col_ed1, col_ed2 = st.columns(2)
     with col_ed1:
-        st.markdown("""
-        <div class="interactive-card">
-            <div class="job-header" style="margin-bottom:10px;">Academic Foundations</div>
-            <p style="margin:0; font-weight:600; font-size:15px;">MSc in Computer Science (High Integrity Systems)</p>
-            <p style="color:#9CA3AF; font-size:13px; margin:0; font-family: monospace;">Frankfurt University of Applied Sciences | Germany</p>
-            <br>
-            <p style="margin:0; font-weight:600; font-size:15px;">BSc in Computer Science</p>
-            <p style="color:#9CA3AF; font-size:13px; margin:0; font-family: monospace;">Mumbai University | India</p>
-        </div>
-        """, unsafe_allow_html=True)
-        
+        st.markdown('<div class="interactive-card"><div class="job-header" style="margin-bottom:10px;">Academic Foundations</div><p style="margin:0; font-weight:600; font-size:15px;">MSc in Computer Science (High Integrity Systems)</p><p style="color:#9CA3AF; font-size:13px; margin:0; font-family: monospace;">Frankfurt University of Applied Sciences | Germany</p><br><p style="margin:0; font-weight:600; font-size:15px;">BSc in Computer Science</p><p style="color:#9CA3AF; font-size:13px; margin:0; font-family: monospace;">Mumbai University | India</p></div>', unsafe_allow_html=True)
     with col_ed2:
-        st.markdown("""
-        <div class="interactive-card">
-            <div class="job-header" style="margin-bottom:10px;">Technical Credentials</div>
-            <p style="margin:0; font-size:14px; color:#E2E8F0;">✔️ Java Programming — IIT Bombay (Spoken Tutorial)</p>
-            <p style="margin:6px 0; font-size:14px; color:#E2E8F0;">✔️ MongoDB Developer — Vidyalankar School of IT</p>
-            <p style="margin:0; font-size:14px; color:#E2E8F0;">✔️ HTML, CSS & JavaScript — Vidyalankar School of IT</p>
-            <br>
-            <p style="margin:0; font-size:13px; color:#9CA3AF; font-family: monospace;">🗣️ Languages: English (Fluent C1) | German (A2)</p>
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown('<div class="interactive-card"><div class="job-header" style="margin-bottom:10px;">Technical Credentials</div><p style="margin:0; font-size:14px; color:#E2E8F0;">✔️ Java Programming — IIT Bombay (Spoken Tutorial)</p><p style="margin:6px 0; font-size:14px; color:#E2E8F0;">✔️ MongoDB Developer — Vidyalankar School of IT</p><p style="margin:0; font-size:14px; color:#E2E8F0;">✔️ HTML, CSS & JavaScript — Vidyalankar School of IT</p><br><p style="margin:0; font-size:13px; color:#9CA3AF; font-family: monospace;">🗣️ Languages: English (Fluent C1) | German (A2)</p></div>', unsafe_allow_html=True)
