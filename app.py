@@ -12,7 +12,8 @@ st.markdown("""
     .interactive-card { background: #111827; border: 1px solid #1F2937; padding: 30px; border-radius: 12px; margin-bottom: 15px; transition: all 0.3s; }
     .interactive-card:hover { transform: translateY(-6px); border-color: #38BDF8; }
     .job-title { font-size: 20px; font-weight: 700; color: #38BDF8; }
-    .skill-badge { background: #1F2937; color: #38BDF8; border: 1px solid #2D3748; padding: 6px 14px; border-radius: 20px; display: inline-block; margin: 5px; font-size: 13px; }
+    .skill-badge { background: #1F2937; color: #38BDF8; border: 1px solid #2D3748; padding: 6px 14px; border-radius: 20px; display: inline-block; margin: 5px; font-size: 13px; transition: all 0.2s ease; cursor: default; }
+    .skill-badge:hover { background: #38BDF8; color: #0A0F1D; }
     </style>
 """, unsafe_allow_html=True)
 
@@ -61,18 +62,26 @@ with tab2:
     st.markdown("""
     <div class="interactive-card">
         <div class="job-title">FIFA World Cup Data Analysis Dashboard</div>
-        <p>Transformed historical FIFA World Cup datasets into an interactive Power BI dashboard for granular analysis of tournament trends.</p>
-        <p><b>Features:</b> Tournament Overview, Interactive Slicers by Stage/Team, and optimized Data Modeling using DAX.<br>
-        🔗 <a href="https://github.com/krishtamboli/FIFA-WorldCup-Analytics" style="color: #38BDF8;">GitHub Repository</a></p>
-        <span class="skill-badge">Power BI</span><span class="skill-badge">DAX</span><span class="skill-badge">Excel</span><span class="skill-badge">Tableau</span><span class="skill-badge">Data Modeling</span>
+        <p>Focused on transforming historical FIFA World Cup datasets into an interactive Power BI dashboard. 
+        The goal was to practice data modeling and develop a clean, user-friendly interface for granular analysis.</p>
+        <p><b>Key Features:</b> Tournament Overview (visualized trends), Interactive Filtering (slice by stage/team), and Data Modeling (DAX and star schema techniques).</p>
+        <p>🔗 <a href="https://github.com/krishtamboli/FIFA-WorldCup-Analytics" style="color: #38BDF8;">GitHub Repository</a></p>
     </div>
     """, unsafe_allow_html=True)
+    
 
     # Kafka Project
     st.markdown("""
     <div class="interactive-card">
         <div class="job-title">Apache Kafka ➔ Databricks Medallion Engine</div>
-        <p>Designed a cloud ingestion pipeline to capture and parse high-volume message payloads into Databricks.</p>
-        <span class="skill-badge">Apache Kafka</span><span class="skill-badge">PySpark</span><span class="skill-badge">Databricks</span><span class="skill-badge">SQL</span>
+        <p>Engineered a cloud ingestion pipeline designed to capture and parse high-volume message payloads from Apache Kafka cluster topics straight into a Databricks environment. 
+        By deploying automated Python and PySpark streaming tasks, the architecture ensures real-time stream execution, prevents partition lag under stress testing cycles, and organizes event data into structured database tables.</p>
     </div>
     """, unsafe_allow_html=True)
+    
+
+    # Technical Skills Section (Placed after projects as requested)
+    st.subheader("Technical Skills")
+    skills = ["Power BI", "DAX", "SQL", "Python", "Tableau", "Excel", "Data Modeling", "ETL Architecture", "Data Cleaning", "PySpark", "Apache Kafka"]
+    for skill in skills:
+        st.markdown(f'<span class="skill-badge">{skill}</span>', unsafe_allow_html=True)
