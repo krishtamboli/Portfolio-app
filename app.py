@@ -1,77 +1,78 @@
 import streamlit as st
 
-# 1. Page Configuration
-st.set_page_config(page_title="Chaital | Data Portfolio", page_icon="⚡", layout="wide")
+# 1. High-Performance Page Configuration
+st.set_page_config(page_title="Krish Tamboli | Data Portfolio", page_icon="⚡", layout="wide")
 
-# 2. CSS Engine
+# 2. Premium UI Hover-Float CSS Engine
 st.markdown("""
     <style>
-    .main { background-color: #0A0F1D !important; color: #E2E8F0 !important; font-family: sans-serif; }
-    .hero-name { font-size: 50px; font-weight: 800; color: #38BDF8; }
-    .interactive-card { background: #111827; border: 1px solid #1F2937; padding: 25px; border-radius: 12px; margin-bottom: 15px; }
-    .skill-badge { background: #1F2937; color: #38BDF8; border: 1px solid #2D3748; padding: 5px 12px; border-radius: 20px; display: inline-block; margin: 4px; font-size: 12px; }
+    .main { background-color: #0A0F1D !important; color: #E2E8F0 !important; font-family: 'Inter', sans-serif; }
+    header, footer, .stDeployButton { display: none !important; }
+    .hero-name { font-size: 60px; font-weight: 800; background: linear-gradient(45deg, #38BDF8, #0EA5E9); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .interactive-card { background: #111827; border: 1px solid #1F2937; padding: 30px; border-radius: 12px; margin-bottom: 15px; transition: all 0.3s; }
+    .interactive-card:hover { transform: translateY(-6px); border-color: #38BDF8; }
+    .job-title { font-size: 20px; font-weight: 700; color: #38BDF8; }
+    .skill-badge { background: #1F2937; color: #38BDF8; border: 1px solid #2D3748; padding: 6px 14px; border-radius: 20px; display: inline-block; margin: 5px; font-size: 13px; }
     </style>
 """, unsafe_allow_html=True)
 
 # 3. Sidebar
 with st.sidebar:
-    st.markdown("### Chaital")
-    st.caption("Data Analyst & Specialist")
+    st.markdown("### Krish Tamboli")
+    st.markdown("📍 Frankfurt, Germany | ✉️ krishtamboli10@gmail.com")
     st.markdown("---")
-    st.markdown("📍 Germany")
-    st.markdown("[LinkedIn](https://linkedin.com) | [GitHub](https://github.com/krishtamboli)")
 
-# 4. Main Content
-st.markdown("<div class='hero-name'>Chaital</div>", unsafe_allow_html=True)
-st.markdown("Master's student in High Integrity Systems and Biotechnology, specializing in Data Analytics and Business Intelligence.")
+# 4. Main Profile Hook
+st.markdown("<div class='hero-name'>Krish Tamboli</div>", unsafe_allow_html=True)
+st.markdown("### Data Science & Data Engineering")
+st.write("""
+I am a Data Professional specializing in the structural integrity of data assets. I focus on building 
+resilient extraction architectures, auditing datasets, and automating pipeline workflows to supply 
+enterprise-grade reporting environments with accurate, high-quality data.
+""")
 
-# Tabs Setup
-tab1, tab2 = st.tabs(["💼 Professional Experience", "🚀 Portfolio Projects"])
+# 5. Interactive Tabs
+tab1, tab2 = st.tabs(["💼 Professional Experience & Education", "🚀 Portfolio Projects"])
 
 with tab1:
-    st.subheader("Industry Experience")
+    st.subheader("Professional History")
     st.markdown("""
     <div class="interactive-card">
-        <div style="color: #38BDF8; font-weight: bold;">Software Specialist (Data Analytics) | eClinicalWorks</div>
-        <p style="margin-top: 10px;">
-        • <b>Data Engineering:</b> Streamlined data ingestion workflows, ensuring high-integrity data flow from source systems into analytical environments.<br>
-        • <b>Data Analysis:</b> Investigated system logs and master records to identify data quality bottlenecks, improving overall reporting reliability by 15%.<br>
-        • <b>Automation:</b> Developed automated monitoring workflows to track pipeline health, significantly reducing manual overhead.<br>
-        • <b>Visualization:</b> Designed and deployed interactive dashboards to translate complex operational metrics into actionable business insights.
-        </p>
+        <div class="job-title">Software Specialist (Data Analytics) | eClinicalWorks</div>
+        <p>• Engineered robust data pipelines to ensure seamless ETL flows from raw source systems to analytical databases.<br>
+           • Executed complex data audits on master record sets to eliminate discrepancies, improving reporting reliability by 15%.<br>
+           • Built automated performance monitoring matrices to flag pipeline deviations, reducing operational latency by 40%.<br>
+           • Developed interactive business intelligence dashboards to translate high-volume operational metrics into actionable insights for stakeholders.</p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    st.subheader("Academic Credentials")
+    st.markdown("""
+    <div class="interactive-card">
+        • <b>MSc in Computer Science (High Integrity Systems)</b> | Frankfurt UAS, Germany<br>
+        • <b>BSc in Computer Science</b> | Mumbai University, India
     </div>
     """, unsafe_allow_html=True)
 
 with tab2:
-    st.subheader("Featured Projects")
+    st.subheader("Data Projects")
     
     # FIFA Project
     st.markdown("""
     <div class="interactive-card">
-        <div style="color: #38BDF8; font-weight: bold; font-size: 18px;">FIFA World Cup Data Analysis Dashboard</div>
-        <p style="margin-top: 10px;">
-        Focused on transforming historical FIFA World Cup datasets into an interactive Power BI dashboard. 
-        The goal was to practice data modeling and develop a user-friendly interface for granular analysis.<br><br>
-        <b>Key Features:</b><br>
-        • <b>Tournament Overview:</b> Visualized historical match results, scoring trends, and performance metrics.<br>
-        • <b>Interactive Filtering:</b> Built functionality to slice data by tournament stage, team, and match outcomes.<br>
-        • <b>Data Modeling:</b> Applied DAX and star schema techniques to structure tournament data for efficient visualization.<br>
-        <br>
-        🔗 <a href="https://github.com/krishtamboli/FIFA-WorldCup-Analytics" style="color: #38BDF8;">View Project on GitHub</a>
-        </p>
-        <div style="margin-top: 10px;">
-            <span class="skill-badge">Microsoft Power BI</span>
-            <span class="skill-badge">DAX</span>
-            <span class="skill-badge">Excel</span>
-            <span class="skill-badge">Tableau</span>
-            <span class="skill-badge">Data Modeling</span>
-            <span class="skill-badge">Data Visualization</span>
-        </div>
+        <div class="job-title">FIFA World Cup Data Analysis Dashboard</div>
+        <p>Transformed historical FIFA World Cup datasets into an interactive Power BI dashboard for granular analysis of tournament trends.</p>
+        <p><b>Features:</b> Tournament Overview, Interactive Slicers by Stage/Team, and optimized Data Modeling using DAX.<br>
+        🔗 <a href="https://github.com/krishtamboli/FIFA-WorldCup-Analytics" style="color: #38BDF8;">GitHub Repository</a></p>
+        <span class="skill-badge">Power BI</span><span class="skill-badge">DAX</span><span class="skill-badge">Excel</span><span class="skill-badge">Tableau</span><span class="skill-badge">Data Modeling</span>
     </div>
     """, unsafe_allow_html=True)
 
-    st.markdown("---")
-    st.markdown("### Technical Toolkit")
-    skills = ["Power BI", "Tableau", "DAX", "Excel", "SQL", "Data Modeling", "ETL Architecture", "Data Cleaning"]
-    for skill in skills:
-        st.markdown(f'<span class="skill-badge">{skill}</span>', unsafe_allow_html=True)
+    # Kafka Project
+    st.markdown("""
+    <div class="interactive-card">
+        <div class="job-title">Apache Kafka ➔ Databricks Medallion Engine</div>
+        <p>Designed a cloud ingestion pipeline to capture and parse high-volume message payloads into Databricks.</p>
+        <span class="skill-badge">Apache Kafka</span><span class="skill-badge">PySpark</span><span class="skill-badge">Databricks</span><span class="skill-badge">SQL</span>
+    </div>
+    """, unsafe_allow_html=True)
