@@ -9,6 +9,7 @@ st.markdown("""
     .main { background-color: #0A0F1D !important; color: #E2E8F0 !important; font-family: 'Inter', sans-serif; }
     header, footer, .stDeployButton { display: none !important; }
     .hero-name { font-size: 60px; font-weight: 800; background: linear-gradient(45deg, #38BDF8, #0EA5E9); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .contact-info { color: #9CA3AF; font-size: 16px; margin-bottom: 20px; }
     .interactive-card { background: #111827; border: 1px solid #1F2937; padding: 30px; border-radius: 12px; margin-bottom: 15px; transition: all 0.3s; }
     .interactive-card:hover { transform: translateY(-6px); border-color: #38BDF8; }
     .job-title { font-size: 20px; font-weight: 700; color: #38BDF8; }
@@ -20,12 +21,21 @@ st.markdown("""
 # 3. Sidebar
 with st.sidebar:
     st.markdown("### Krish Tamboli")
-    st.markdown("📍 Frankfurt, Germany | ✉️ krishtamboli10@gmail.com")
+    st.markdown("📍 Frankfurt, Germany")
+    st.markdown("✉️ krishtamboli10@gmail.com")
+    st.markdown("📞 +49 15510685501")
     st.markdown("---")
 
 # 4. Main Profile Hook
 st.markdown("<div class='hero-name'>Krish Tamboli</div>", unsafe_allow_html=True)
 st.markdown("### Data Science & Data Engineering")
+# Personal Contact Details under the name
+st.markdown("""
+    <div class='contact-info'>
+    📍 Frankfurt, Germany &nbsp; | &nbsp; ✉️ krishtamboli10@gmail.com &nbsp; | &nbsp; 📞 +49 15510685501
+    </div>
+""", unsafe_allow_html=True)
+
 st.write("""
 I am a Data Professional specializing in the structural integrity of data assets. I focus on building 
 resilient extraction architectures, auditing datasets, and automating pipeline workflows to supply 
@@ -80,7 +90,7 @@ with tab2:
     """, unsafe_allow_html=True)
     
 
-    # Technical Skills Section (Placed after projects as requested)
+    # Technical Skills Section
     st.subheader("Technical Skills")
     skills = ["Power BI", "DAX", "SQL", "Python", "Tableau", "Excel", "Data Modeling", "ETL Architecture", "Data Cleaning", "PySpark", "Apache Kafka"]
     for skill in skills:
